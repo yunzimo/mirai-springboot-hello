@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+bot:
+  qq: botQQ
+  passwdMd5: a5d8f42f10b7f441
+  passwd: "bot????"
+  master: "??QQ"
+
