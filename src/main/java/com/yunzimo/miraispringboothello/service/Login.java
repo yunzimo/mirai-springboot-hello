@@ -1,6 +1,6 @@
 package com.yunzimo.miraispringboothello.service;
 
-import com.yunzimo.miraispringboothello.utils.HelloWorld;
+import com.yunzimo.miraispringboothello.event.MasterReply;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
 import net.mamoe.mirai.utils.BotConfiguration;
@@ -23,7 +23,7 @@ public class Login {
     private String passwd;
 
     @Autowired
-    private HelloWorld helloWorld;
+    private MasterReply masterReply;
 
     @PostConstruct
     public void register() {
@@ -33,6 +33,6 @@ public class Login {
             setProtocol(MiraiProtocol.ANDROID_PAD); // 切换协议
         }});
         bot.login();
-        helloWorld.afterLogin(bot);
+        masterReply.afterLogin(bot);
     }
 }
