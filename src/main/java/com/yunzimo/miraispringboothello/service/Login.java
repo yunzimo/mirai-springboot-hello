@@ -10,6 +10,12 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * 登录
+ *
+ * @author yunzimo
+ * @date 2021/11/26
+ */
 @Service
 public class Login {
 
@@ -25,8 +31,12 @@ public class Login {
     @Autowired
     private MasterReply masterReply;
 
+    /**
+     *
+     * bot登录.
+     */
     @PostConstruct
-    public void register() {
+    public void login() {
         //使用自定义配置登录bot
         Bot bot = BotFactory.INSTANCE.newBot(qq, passwd, new BotConfiguration() {{
             fileBasedDeviceInfo(); // 使用 device.json 存储设备信息

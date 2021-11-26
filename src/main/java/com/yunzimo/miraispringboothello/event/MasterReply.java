@@ -9,13 +9,24 @@ import net.mamoe.mirai.message.data.QuoteReply;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+
+/**
+ * 主QQ回复
+ *
+ * @author yunzimo
+ * @date 2021/11/26
+ */
 @Component
 public class MasterReply {
 
     @Value("${bot.master}")
     private String masterQQ;
 
-    //发给bot会回复你的信息
+    /**
+     * bot登录后，会回复主QQ的消息（重复）.
+     *
+     * @param bot the bot
+     */
     public void afterLogin(Bot bot) {
         String yourQQNumber = masterQQ;
         bot.getEventChannel().subscribeAlways(FriendMessageEvent.class, (event) -> {
